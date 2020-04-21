@@ -1,4 +1,4 @@
-console.log("CoderCookies!!");
+console.log("Hello!!");
 let cards = [
     {
         name: "hulk",
@@ -61,7 +61,7 @@ function checkMatch(){
     if(placeClickedName[0] === placeClickedName[1]){
         result++;
         document.getElementById("result").innerHTML = result;
-        alert("you got it");
+        // alert("you got it");
         place[optionOneId].removeEventListener("click",flipthecard);
         place[optionTwoId].removeEventListener("click",flipthecard);
     } else{
@@ -87,7 +87,7 @@ function StartGame(){
     // for(let i=0; i<place.length; i++){
     //     console.log("Showing all");
     // }
-    // createGame();
+    createGame();
 }
 
 function flipthecard(e){
@@ -102,7 +102,7 @@ function flipthecard(e){
 
     if(placeClickedName.length === 2){
         console.log("RAAAAAAAAAAAAAJ");
-        setTimeout(checkMatch,500);
+        setTimeout(checkMatch,200);
     }
 }
 function reload(){
