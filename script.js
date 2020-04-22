@@ -45,7 +45,7 @@ let placeClickedName = [];
 let placeClickedId = [];
 
 function createGame(){
-    place = document.getElementsByClassName("box");
+    //place = document.getElementsByClassName("box");
     console.log(place);
     for(let i=0; i<place.length; i++){
         place[i].addEventListener("click",flipthecard);
@@ -74,20 +74,15 @@ function checkMatch(){
         placeClickedName = [];
 }
 
-function StartGame(){
-    // set src of all the images
-
-    // timeout function to cover image after 15 seconds
-
-    // add eventlistener to all the boxes
-
-    // check
-
-
-    // for(let i=0; i<place.length; i++){
-    //     console.log("Showing all");
-    // }
-    createGame();
+function initialShow(){
+    // set src of all the img tag to show images
+    place = document.getElementsByClassName("box");
+    for(let i=0; i<place.length; i++){
+        console.log(place[i]);
+        place[i].setAttribute("src",cards[i].img);
+    }
+    // start the game after 5 seconds
+    setTimeout(createGame,700);
 }
 
 function flipthecard(e){
@@ -109,4 +104,4 @@ function reload(){
     location.reload();
 }
 
-StartGame();
+initialShow();
