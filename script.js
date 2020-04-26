@@ -82,7 +82,7 @@ function initialShow(){
         place[i].setAttribute("src",cards[i].img);
     }
     // start the game after 5 seconds
-    setTimeout(createGame,700);
+    setTimeout(createGame,1500);
 }
 
 function flipthecard(e){
