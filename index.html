@@ -4,19 +4,27 @@
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+<style>
+    *{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    p{
+        font-size: 20px;
+    }
+    a{
+        text-decoration: none;
+        font-size: 20px;
+        border: brown solid 1.5px;
+        border-radius: 2px;
+        background-color: burlywood;
+        padding: 3px;
+        color: black;
+        margin-right: 20px;
+    }
+</style>
 <body>
-    <h1>Result : <span id="result"></span></h1>
-    <div id="container">
-        <img class="box" id="0"></img>
-        <img class="box" id="1"></img>
-        <img class="box" id="2"></img>
-        <img class="box" id="3"></img>
-        <img class="box" id="4"></img>
-        <img class="box" id="5"></img>
-        <img class="box" id="6"></img>
-        <img class="box" id="7"></img>
-    </div>
-    <button onclick="reload()">Reset Game</button>
-    <script src="script.js"></script>
+    <p>Which version of game would you like to play?</p>
+    <a href="v1.html">Match the pair</a>
+    <a href="v2.html">Identify the image as shown</a>
 </body>
 </html>
