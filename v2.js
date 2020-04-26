@@ -1,4 +1,5 @@
-console.log("Hello!!");
+console.log("Hello!!"); 
+document.getElementById("instruction").innerHTML = "You will have five seconds to remember all the images then you have to tell which image is where!";
 let cards = [
     {
         name: "hulk",
@@ -25,6 +26,7 @@ randomCards.sort(() => 0.5 - Math.random());
 console.log(randomCards);
 console.log(cards);
 
+let timer = document.getElementById("timer");
 let cover = "images/cover.jpg"
 let result = 0;
 let place = document.getElementsByClassName("box");
@@ -36,7 +38,35 @@ let queNum = 0;
 let que = document.getElementById("question");
 
 /**********************/
+function startTimer(min,sec){
+    let x = setInterval(function(){
+        if(sec > 0){
+            sec--;
+        }else if(sec === 0){
+            min--;
+            sec = 59;
+        }
+        let m = min;
+        let s = sec;
+        if(min<10) m = "0"+m;
+        if(sec<10) s = "0"+s;
+        //display time on screen
+        timer.innerHTML =  m  + ":" +  s;
+        //when user wins
+        if(result >= cards.length){
+            document.getElementById("result").innerHTML = "";
+            timer.innerHTML = "You win!";
+            clearInterval(x);
+            document.getElementById("inprogress").setAttribute("id","win");
 
+        }
+        //stop timer
+        if(min <= 0 && sec <= 0){
+            timer.innerHTML = "Time Over!";
+            clearInterval(x);
+        }
+    },1000);
+}
 
 function initialShow(){
     // set src of all the img tag to show images
@@ -46,12 +76,12 @@ function initialShow(){
         place[i].setAttribute("src",randomCards[placeId].img);
     }
     // start the game after 5 seconds
-    document.getElementById("instruction").innerHTML = "You will have five seconds to remember all the images then you have to tell which image is where!"
-    setTimeout(createGame,6000);
+    setTimeout(createGame,3000);
 }
 
 function createGame(){
     // show question card
+    startTimer(0,10);
     document.getElementById("instruction").innerHTML = "";
     showQuestionCard(0);
     console.log("game created!");
@@ -101,4 +131,4 @@ function reload(){
     location.reload();
 }
 
-initialShow();
+
