@@ -1,3 +1,7 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
 #container{
     /* border: 4px solid tomato; */
     display: grid;
@@ -16,21 +20,23 @@
     height: 150px;
     border: none;
 }
-button{
-    background-color: lightcoral;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    padding: 10px;
-    margin-top: 20px;
-    border-radius: 2px;
-    border: black;
-}
+
 #main{
     max-width: 500px;
     margin: auto;
+
+
 }
-body{
+#inprogress{
+
     background-image: url('images/background.jpg');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#win{
+    background-image: url('images/winbg.gif');
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -41,4 +47,15 @@ p{
 }
 *{
     font-family: Arial, Helvetica, sans-serif;
+    color: indianred;
+}
+button{
+    background-color: lightcoral;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 2px;
+    border: black;
+    color: white;
 }
